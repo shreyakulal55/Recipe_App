@@ -9,7 +9,7 @@ const AboutUs = () => {
         <div className="card">
           <div className="card-header" id="headingOne" style={{backgroundColor:"#FFA500"}}>
             <h5 className="mb-0">
-            Shrutha's Kitchen
+            MakeYourFood
             </h5>
           </div>
           <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
