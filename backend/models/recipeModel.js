@@ -1,38 +1,35 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const RecipeSchema = mongoose.Schema({
+const RecipeSchema = new mongoose.Schema(
+  {
     recipe_name: {
-        type: 'string',
-        required: true,
-        Unique: true,
-    },
-    recipe_images: {
-        type: 'array',
-        required: false,
-         Unique: true,
+      type: "string",
+      required: true,
+      Unique: true,
     },
     ingredients: {
-        type: "string",
-        required: true,
+      type: "string",
+      required: true,
     },
     instructions: {
-        type: "string",
-        required: true,
-        Unique: true,
+      type: "string",
+      required: true,
+      Unique: true,
     },
     time_to_complete: {
-        type: "string",
-        required: true,
+      type: "string",
+      required: true,
     },
-    creator_id: {
-        type: "string",
-        required: false,
-        Unique: true,
+    creator_name: {
+      type: "string",
+      required: true,
     },
     cusine_type: {
-        type: "string",
-        required: true,
-    }
-});
+      type: "string",
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model("recipes", RecipeSchema);
+module.exports = new mongoose.model("recipes", RecipeSchema);
