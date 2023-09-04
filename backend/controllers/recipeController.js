@@ -1,3 +1,5 @@
+const express = require('express');
+const asynchHandler = require('express-async-handler');
 const recipeModel = require("../models/recipeModel");
 const { isValid, isValidBody } = require("./validator");
 const jwt = require("jsonwebtoken");
@@ -52,7 +54,37 @@ exports.createRecipe = async (req, res) => {
       }
     };
 
-module.exports = { createRecipe};
+
+// --------------- Delete recipe -----------------
+
+exports.deleteRecipe(
+  '/:id',
+  asynchHandler(async (req, res) => {
+    try {
+      const allRecipe = await recipeModel.findByIdAndDelete(req.params.id);
+      res.status(200).json(allRecipe);
+      res.send(allRecipe);
+    } catch (error) {
+      res.status(500);
+      throw new Error('Server Error');
+    }
+  })
+);
+exports.UpdateRecipe(
+    '/:id',
+    asynchHandler(async (req, res) => {
+      try {
+        const allRecipe = await recipeModel.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json(allRecipe);
+        res.json(allRecipe);
+      } catch (error) {
+        res.status(500);
+        throw new Error('Update failed');
+      }
+    })
+  );
+  
+module.exports = { createRecipe,deleteRecipe,UpdateRecipe};
    
 
 
