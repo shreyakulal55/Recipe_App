@@ -9,7 +9,7 @@ const RecipeSchema = mongoose.Schema({
     recipe_images: {
         type: 'array',
         required: false,
-        Unique: true,
+         Unique: true,
     },
     ingredients: {
         type: "string",

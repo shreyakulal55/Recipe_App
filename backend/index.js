@@ -5,8 +5,13 @@ const route = require("./routes/route");
 
 const app = express();
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use("/", route);
-app.use(cors());
 
 // DB Connection
 mongoose
