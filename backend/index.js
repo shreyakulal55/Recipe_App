@@ -14,7 +14,7 @@ mongoose
     "mongodb+srv://shreyakulal55:shreyakulal55@foodrecipe.jxauwfp.mongodb.net/recipe"
   )
   .then(() => {
-    console.log("DB Connected");
+    console.log("MongoDB Connected");
   })
   .catch((err) => {
     console.log(err);

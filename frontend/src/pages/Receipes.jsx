@@ -6,7 +6,7 @@ function Reciepes() {
   const [fdata, setFData] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:4000").then((res) => {
+    Axios.get("http://localhost:3001").then((res) => {
       console.log(res.data);
       setFData(res.data);
     });
@@ -15,7 +15,7 @@ function Reciepes() {
   //******************delete db data */
   const deleteHandler = (e) => {
     console.log(e);
-    Axios.post("http://localhost:4000/delete", { id: e }).then((res) => {
+    Axios.post("http://localhost:3001/delete", { id: e }).then((res) => {
       let ack = res.data;
       if (ack === "success") {
         alert("data deleted not succesful");

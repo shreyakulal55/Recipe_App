@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -28,7 +29,7 @@ const ChangeHandler = (e) => {
 //*************submit handler */
 const SubmitHandler = (e) => {
   e.preventDefault();
-  Axios.post("http://localhost:4000/ins", { fdata }).then((res) => {
+  Axios.post("http://localhost:3001/ins", { fdata }).then((res) => {
     let ack = res.data;
     if (ack === "success") {
       setMsg("Data inserted successful");
