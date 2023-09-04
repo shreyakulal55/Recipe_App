@@ -10,6 +10,6 @@ router.post("/user", UserController.createUser);
 router.post("/login", UserController.loginUser);
 
 // Recipe API
-// router.post("/createRecipe", verifyToken, )
+router.post("/createRecipe", verifyToken, RecipeController.createRecipe );
 
 module.exports = router;

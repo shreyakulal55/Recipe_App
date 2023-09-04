@@ -13,7 +13,7 @@ exports.createRecipe = async (req, res) => {
     }catch(error){
         res.status(500).send("error: " + error);
     }
-}
+
     // recipe_name Validation
     if (!isValid(recipe_name)) {
         return res.status(400).send({ msg: "recipe_name is Required" });
@@ -50,8 +50,9 @@ exports.createRecipe = async (req, res) => {
       if (!isValid(cusine_type)) {
         return res.status(400).send({ msg: "cusine_type is Required" });
       }
-   
+    };
 
+module.exports = { createRecipe};
    
 
 
