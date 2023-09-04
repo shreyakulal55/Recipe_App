@@ -78,6 +78,16 @@ const createRecipe = async (req, res) => {
   }
 };
 
+//--------- Get Recipe ----------
+let getrecipe = async (req, res) => {
+  let data = req.query;
+
+  let fetchRecipe = await RecipeModel.find();
+  return res
+    .status(200)
+    .send({ msg: "Recipe Details Found Sucessfully", data: fetchRecipe });
+};
+
 // --------------- Update recipe -----------------
 
 const updateRecipe = async function (req, res) {
@@ -117,62 +127,62 @@ const updateRecipe = async function (req, res) {
   }
 };
 
-const getRecipeById = async function (req, res) {
-  try {
-    let recipeId = req.params.id;
+// const getRecipeById = async function (req, res) {
+//   try {
+//     let recipeId = req.params.id;
 
-    if (!isValidObjectId.test(recipeId)) {
-      return res
-        .status(400)
-        .send({ status: false, message: "Please enter the valid recipeId" });
-    }
+//     if (!isValidObjectId.test(recipeId)) {
+//       return res
+//         .status(400)
+//         .send({ status: false, message: "Please enter the valid recipeId" });
+//     }
 
-    let findrecipeId = await recipeModel
-      .findById({ _id: recipeId, isDeleted: false })
-      .select({ cusine_type: 0 });
-    if (!findrecipeId)
-      return res
-        .status(404)
-        .send({ status: false, msg: "No Recipe Data Found" });
+//     let findrecipeId = await recipeModel
+//       .findById({ _id: recipeId, isDeleted: false })
+//       .select({ cusine_type: 0 });
+//     if (!findrecipeId)
+//       return res
+//         .status(404)
+//         .send({ status: false, msg: "No Recipe Data Found" });
 
-    let {
-      _id,
-      recipe_name,
-      recipe_images,
-      ingredients,
-      instructions,
-      time_to_complete,
-      cusine_type,
-      isDeleted,
-      deletedAt,
-      releasedAt,
-      createdAt,
-      updatedAt,
-    } = findrecipeId;
+//     let {
+//       _id,
+//       recipe_name,
+//       recipe_images,
+//       ingredients,
+//       instructions,
+//       time_to_complete,
+//       cusine_type,
+//       isDeleted,
+//       deletedAt,
+//       releasedAt,
+//       createdAt,
+//       updatedAt,
+//     } = findrecipeId;
 
-    let RecipeDetails = {
-      _id,
-      recipe_name,
-      recipe_images,
-      ingredients,
-      instructions,
-      time_to_complete,
-      cusine_type,
-      isDeleted,
-      deletedAt,
-      releasedAt,
-      createdAt,
-      updatedAt,
-      reviewsData,
-    };
+//     let RecipeDetails = {
+//       _id,
+//       recipe_name,
+//       recipe_images,
+//       ingredients,
+//       instructions,
+//       time_to_complete,
+//       cusine_type,
+//       isDeleted,
+//       deletedAt,
+//       releasedAt,
+//       createdAt,
+//       updatedAt,
+//       reviewsData,
+//     };
 
-    res
-      .status(200)
-      .send({ status: true, msg: "All recipe", data: RecipeDetails });
-  } catch (error) {
-    res.status(500).send({ status: false, message: error.message });
-  }
-};
+//     res
+//       .status(200)
+//       .send({ status: true, msg: "All recipe", data: RecipeDetails });
+//   } catch (error) {
+//     res.status(500).send({ status: false, message: error.message });
+//   }
+// };
 
 // --------------- Delete recipe -----------------
 
@@ -225,4 +235,4 @@ const deleteRecipe = async function (req, res) {
   }
 };
 
-module.exports = { createRecipe, getRecipeById, updateRecipe, deleteRecipe };
+module.exports = { createRecipe, getrecipe, updateRecipe, deleteRecipe };
