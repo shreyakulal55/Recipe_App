@@ -95,11 +95,11 @@ const createRecipe = async (req, res) => {
 // };
 let GetRecipe = async (req, res) => {
   try {
-      const recipe = await recipes.findById(req.params.id);
+      const recipe = await RecipeModel.findById(req.params.id);
       if (!recipe ) {
         return res.status(404).json({ message: "Recipe not found" });
       }
-      res.status(200).json(book);
+      res.status(200).json(recipe);
     } catch (error) {
       res.status(500).json({ message: "Error fetching Recipe by ID" });
     }
@@ -107,9 +107,9 @@ let GetRecipe = async (req, res) => {
 
 
 //--------- Delete Recipe ----------
-let DeleteRecipe = async (req, res, next) => {
+let DeleteRecipe = async (req, res) => {
   try {
-      const deleteRecipe = await recipes.findByIdAndDelete(req.params.id);
+      const deleteRecipe = await RecipeModel.findByIdAndDelete(req.params.id);
       if (!deleteRecipe ) {
         return res.status(404).json({ success: false, message: "Recipe not found" });
       }
@@ -139,7 +139,7 @@ let UpdateRecipe = async (req, res) => {
 };
 let ViewRecipe = async (req, res, next) => {
         try {
-          const recipe = await recipes.find();
+          const recipe = await RecipeModel.find();
           res.json(recipe);
         } catch (error) {
           res.status(500).json({ error: 'An error occurred while fetching recipe' });
