@@ -125,7 +125,7 @@ const Home = () => {
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="https://zahramediagroup.com/wp-content/uploads/2021/09/Blog-september.jpg"
+                src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2018/01/Lentil-Soup_D-Kopcok.jpg?ssl=1"
                 class="d-block w-100"
                 width="200"
                 height="550"

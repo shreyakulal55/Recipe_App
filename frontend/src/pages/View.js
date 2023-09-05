@@ -106,14 +106,6 @@ function MyRecipes() {
   </div>
 </nav>
 
-
-
-
-
-
-
-
-
       <div className="myrecipe-container">
         
 

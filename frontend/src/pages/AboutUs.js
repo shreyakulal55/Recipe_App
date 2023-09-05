@@ -7,7 +7,7 @@ const AboutUs = () => {
     <nav class="navbar navbar-expand-lg bg-body-primary" style={{backgroundColor:"#886f60"}}>
       <div class="container-fluid">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Th9KCyA1aoggDfOYRFa_AdCyLv9NtVWIQA&usqp=CAU" width="50" height="50" alt="Logo" className="logo" />
-        <a class="navbar-brand" href="#"></a>
+       
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
