@@ -9,15 +9,14 @@ import { useState } from "react";
 import axios from "axios";
 const Services=()=> {
   const [inputValue,setInputValue] = useState({
-    recipe_name: "",
-    ingredients:"",
-    instructions:"",
-    cookingtime:"",
-    diet:"",
-    creator:"", 
-    recipe_image:"",
+    recipe_name:"",
+    ingredients: "",
+    instructions: "",
+    time_to_complete: "",
+    creator_name: "",
+    cusine_type: "",
   });
-  const { recipe_name , ingredients, instructions , cookingtime, diet,creator,recipe_image} = inputValue;
+  const {  recipe_name,ingredients,instructions,time_to_complete,creator_name,cusine_type,} = inputValue;
 
   const handleOnChange = (e) => {
     const {id, value } = e.target;
@@ -50,7 +49,7 @@ const Services=()=> {
       
       try {
         const { data } = await axios.post(
-          "http://localhost:3001/addrecipe",
+          "http://localhost:3001/createRecipe",
           {
             ...inputValue,
           },
@@ -69,13 +68,12 @@ const Services=()=> {
       }
       setInputValue({
         ...inputValue,
-        recipe_name: "",
-        ingredients:"",
-        instuctions:"",
-        cookingtime:"",
-        diet:"",
-        creator:"", 
-        recipe_images:"",
+        recipe_name:"",
+        ingredients: "",
+        instructions: "",
+        time_to_complete: "",
+        creator_name: "",
+        cusine_type: "",
         
       });
     };
@@ -170,7 +168,7 @@ return (
                        type="text"
                        className="form-control"
                        id="recipe_name"
-                       placeholder="Enter recipe name"
+                       placeholder="Enter Recipe Name"
                        value={recipe_name}
                        onChange={handleOnChange}
                        required
@@ -212,37 +210,37 @@ return (
                     <input
                      type="number"
                      className="form-control"
-                     id="cookingtime"
+                     id="time_to_complete"
                      placeholder="Enter the cooking time"
-                     value={cookingtime}
+                     value={time_to_complete}
                      onChange={handleOnChange}
                      required
                     ></input>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">
-                      Nutritional Details
+                     Creater Name
                     </label>
                     <input
                      type="text"
                      className="form-control"
-                     id="diet"
-                     placeholder="Enter the   Nutritional Details"
-                     value={diet}
+                     id="creator_name"
+                     placeholder="Enter the Creater Name"
+                     value={creator_name}
                      onChange={handleOnChange}
                      required
                     ></input>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">
-                     Creater
+                    Cusine Type
                     </label>
                     <input
                      type="text"
                      className="form-control"
-                     id="creator"
-                     placeholder="Enter the   Nutritional Details"
-                     value={creator}
+                     id="cusine_type"
+                     placeholder="Enter the  Cusine Type"
+                     value={cusine_type}
                      onChange={handleOnChange}
                      required
                     ></input>

@@ -16,6 +16,7 @@ const createRecipe = async (req, res) => {
       time_to_complete,
       creator_name,
       cusine_type,
+      recipe_image
     } = data;
 
     // Recipe Name Validation
@@ -59,6 +60,10 @@ const createRecipe = async (req, res) => {
     if (!isValid(cusine_type)) {
       return res.status(400).send({ msg: "Cusin Type is Required" });
     }
+      // recipe_image Validation
+    if (!isValid(recipe_image)) {
+      return res.status(400).send({ msg: "recipe_image is Required" });
+    }
 
     let createdRecipe = await RecipeModel.create({
       recipe_name,
@@ -66,6 +71,7 @@ const createRecipe = async (req, res) => {
       instructions,
       time_to_complete,
       creator_name,
+      recipe_image,
       cusine_type,
     });
     return res.status(201).send({

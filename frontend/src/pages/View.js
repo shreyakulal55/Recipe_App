@@ -28,7 +28,7 @@ function MyRecipes() {
   }, [fdata, searchQuery]);
 
   useEffect(() => {
-    Axios.get("http://localhost:4000/recipe")
+    Axios.get("http://localhost:3001/recipe")
       .then((res) => {
         console.log(res.data); // Add this line to check the API response
         setFData(res.data);
@@ -38,7 +38,7 @@ function MyRecipes() {
       });
   }, []);
   const handleDelete = (recipeId) => {
-    Axios.delete(`http://localhost:4000/recipe/${recipeId}`)
+    Axios.delete(`http://localhost:3001/recipe/${recipeId}`)
       .then((res) => {
         if (res.status === 200) {
           // Recipe deleted successfully

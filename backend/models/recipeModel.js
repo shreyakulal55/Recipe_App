@@ -24,6 +24,10 @@ const RecipeSchema = new mongoose.Schema(
       type: "string",
       required: true,
     },
+    recipe_image: {
+      type: String,
+      required: false,
+  },
     cusine_type: {
       type: "string",
       required: true,

@@ -17,6 +17,9 @@ const Layout = () => {
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/Services">Services</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/AddReceipe">AddReceipe</a>
         </li>
         <li class="nav-item">
@@ -33,7 +36,9 @@ const Layout = () => {
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn" type="submit">Search</button>
         <br></br>
-        <a href="/Login" class="btn">Login</a>
+        <Link to="/login">
+        <button style={{ backgroundColor: "#FFA500" }}>Logout</button>
+      </Link>
       
       </form>
     </div>
