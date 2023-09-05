@@ -41,9 +41,6 @@ const Services=()=> {
   };
 
 
- 
-
-  
     const handleSubmit = async (e) => {
       e.preventDefault();
       
@@ -80,9 +77,9 @@ const Services=()=> {
 return (
   <>
 
-<nav class="navbar navbar-expand-lg bg-body-primary" style={{backgroundColor:"#FFA500"}}>
+<nav class="navbar navbar-expand-lg bg-body-primary" style={{backgroundColor:"#886f60"}}>
   <div class="container-fluid">
-  <img src="https://www.zarla.com/images/zarla-our-kitchen-1x1-2400x2400-20211105-h3rkb8t4qvc74kx6bjpt.png?crop=1:1,smart&width=250&dpr=2" width="150" height="150" alt="Logo" className="logo" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Th9KCyA1aoggDfOYRFa_AdCyLv9NtVWIQA&usqp=CAU" width="50" height="50" alt="Logo" className="logo" />
     <a class="navbar-brand" href="#"></a>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +91,7 @@ return (
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/Services">Services</a>
+          <a class="nav-link" href="/Services">AddYourFood</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/Receipes">Receipes</a>
@@ -111,7 +108,7 @@ return (
         <button class="btn" type="submit">Search</button>
         <br></br>
         <Link to="/login">
-        <button style={{ backgroundColor: "#FFA500" }}>Logout</button>
+        <button style={{ backgroundColor: "#8f8884" }}>Logout</button>
       </Link>
       
       </form>
@@ -130,7 +127,7 @@ return (
                     <img src="https://ngs-space1.sgp1.digitaloceanspaces.com/am/uploads/mediaGallery/image/1657531944940.jpg-org" width="auto" height="250px"></img>                
                     <div class="card-body">
                         <h5 class="card-title">Add Recipe</h5>
-                        <button type="button" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal"> Add</button>
+                        <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal"> Add</button>
                     </div>
                 </div>
             </div>
@@ -141,7 +138,7 @@ return (
                     <img src="https://plus.unsplash.com/premium_photo-1661265967105-f8afb13a8135?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG9wJTIwdmlldyUyMGZvb2R8ZW58MHx8MHx8fDA%3D&w=1000&q=80" width="auto" height="250px"></img>
                     <div class="card-body">
                         <h5 class="card-title">View Recipes</h5>
-                        <a href="/view" class="btn">View</a>
+                        <a href="/view" class="btn btn-success"style={{backgroundcolor:"#FFA500"}} >View</a>
                     </div>
                 </div>
             </div>
@@ -154,7 +151,7 @@ return (
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Recipes to the kitchen</h1>
+      <h1 class="modal-title fs-5" id="exampleModalLabel">Add Recipes to the kitchen</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

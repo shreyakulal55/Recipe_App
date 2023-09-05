@@ -8,7 +8,7 @@
 
 label {
   font-size: 1.2rem;
-  color: #d8b82b;
+  color: #9f9b8c;
 }
 
 html,
@@ -23,9 +23,9 @@ body {
   align-items: center; */
   background: linear-gradient(
     90deg,
-    rgb(36, 16, 0) 0%,
-    rgb(196, 155, 23) 35%,
-    rgba(236, 194, 3, 0.671) 100%
+    rgb(176, 160, 147) 0%,
+    rgb(136, 134, 125) 35%,
+    rgba(118, 116, 108, 0.671) 100%
   );
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -34,18 +34,18 @@ body {
    /* display: flex;
   justify-content: center;
   align-items: center; */
-  background-color: #ffffff;
+  background-color: #817878;
   padding: 2rem 3rem;
   border-radius: 0.5rem;
   width: 100%;
   max-width: 400px;
-  box-shadow: 8px 8px 24px 0px rgb(224, 228, 18);
+  box-shadow: 8px 8px 24px 0px rgb(140, 141, 133);
 }
 
 .form_container > h2 {
   margin-block: 1rem;
   padding-block: 0.6rem;
-  color: rgb(255, 187, 0);
+  color: rgb(110, 107, 98);
 }
 
 .form_container > form {
@@ -63,7 +63,7 @@ body {
 .form_container input {
   border: none;
   padding: 0.5rem;
-  border-bottom: 1px solid rgb(241, 162, 13);
+  border-bottom: 1px solid rgb(130, 125, 117);
   font-size: 1.1rem;
   outline: none;
 }
@@ -74,7 +74,7 @@ body {
 }
 
 .form_container button {
-  background-color: rgb(255, 145, 0);
+  background-color: rgb(103, 97, 89);
   color: #fff;
   border: none;
   padding: 0.6rem;
@@ -85,7 +85,7 @@ body {
 
 span a {
   text-decoration: none;
-  color: rgb(255, 115, 0);
+  color: rgb(114, 107, 101);
 }
 
 .home_page {
@@ -103,7 +103,7 @@ span a {
 }
 
 .home_page span {
-  color: rgb(255, 196, 0);
+  color: rgb(146, 138, 148);
 }
 
 .home_page button {
@@ -118,7 +118,7 @@ span a {
 }
 
 .home_page button:hover {
-  background-color: rgb(255, 153, 0);
+  background-color: rgb(143, 135, 123);
 }
 
 

@@ -3,9 +3,9 @@ const Layout = () => {
     return ( 
         <>
         
-        <nav class="navbar navbar-expand-lg bg-body-primary" style={{backgroundColor:"#FFA500"}}>
+        <nav class="navbar navbar-expand-lg bg-body-primary" style={{backgroundColor:"#5f5b5c"}}>
   <div class="container-fluid">
-  <img src="https://www.zarla.com/images/zarla-our-kitchen-1x1-2400x2400-20211105-h3rkb8t4qvc74kx6bjpt.png?crop=1:1,smart&width=250&dpr=2" width="150" height="150" alt="Logo" className="logo" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Th9KCyA1aoggDfOYRFa_AdCyLv9NtVWIQA&usqp=CAU" width="150" height="150" alt="Logo" className="logo" />
     <a class="navbar-brand" href="#"></a>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,15 +32,13 @@ const Layout = () => {
           <a class="nav-link" href="/AboutUs">About Us</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn" type="submit">Search</button>
+  
         <br></br>
         <Link to="/login">
         <button style={{ backgroundColor: "#FFA500" }}>Logout</button>
       </Link>
       
-      </form>
+  
     </div>
   </div>
 </nav>

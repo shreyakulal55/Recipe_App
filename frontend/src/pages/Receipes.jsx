@@ -32,7 +32,7 @@ function Reciepes() {
           return (
             <div
               style={{
-                backgroundColor: "orange",
+                backgroundColor: "#5f5b5c",
                 width: "auto",
                 float: "left",
                 margin: "10px",
