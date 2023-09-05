@@ -5,23 +5,23 @@ import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
 import AboutUs from "./pages/AboutUs.js";
 import Update from "./pages/Update";
-import "bootstrap/dist/css/bootstrap.css"
-import "bootstrap/dist/js/bootstrap.bundle"
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle";
 import Layout from "./pages/Layout";
 import Services from "./pages/Services";
-import View from "./pages/View"
+import View from "./pages/View";
 function App() {
   return (
     <div className="App">
       <Routes>
-      <Route path="/" element={<Layout />} />
-        <Route index element={<Home />} />  
-        <Route path="/AboutUs" element={<AboutUs/>} />
+        <Route path="/" element={<Layout />} />
+        <Route index element={<Home />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/view" element={<View/>} />
-        <Route path="/update/:id" element={<Update/>} />
+        <Route path="/view" element={<View />} />
+        <Route path="/update/:id" element={<Update />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </div>
@@ -29,24 +29,6 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import { Route, Routes } from "react-router-dom";
 // import Login from "./pages/Login";
@@ -66,7 +48,7 @@ export default App;
 //     <div className="App">
 //       <Routes>
 //       <Route path="/" element={<Layout />} />
-//         <Route index element={<Home />} />  
+//         <Route index element={<Home />} />
 //         <Route path="/AboutUs" element={<AboutUs/>} />
 //         <Route path="/login" element={<Login />} />
 //         <Route path="/Services" element={<Services />} />
@@ -78,7 +60,6 @@ export default App;
 // }
 
 // export default App;
-
 
 // import { Route, Routes } from "react-router-dom";
 // import Login from "./pages/Login";
@@ -96,7 +77,7 @@ export default App;
 //     <div className="App">
 //       <Routes>
 //       <Route path="/" element={<Layout />} />
-//         <Route index element={<Home />} />  
+//         <Route index element={<Home />} />
 //         <Route path="/AboutUs" element={<AboutUs/>} />
 //         <Route path="/login" element={<Login />} />
 //         <Route path="/signup" element={<Signup />} />

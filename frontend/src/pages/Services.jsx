@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { useState } from "react";
 import axios from "axios";
 const Services = () => {
@@ -76,10 +76,10 @@ const Services = () => {
   return (
     <>
       <nav
-        class="navbar navbar-expand-lg bg-body-primary"
+        className="navbar navbar-expand-lg bg-body-primary"
         style={{ backgroundColor: "#886f60" }}
       >
-        <div class="container-fluid">
+        <div className="container-fluid">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Th9KCyA1aoggDfOYRFa_AdCyLv9NtVWIQA&usqp=CAU"
             width="50"
@@ -87,10 +87,10 @@ const Services = () => {
             alt="Logo"
             className="logo"
           />
-          <a class="navbar-brand" href="#"></a>
+          <Link className="navbar-brand" to="#"></Link>
 
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -98,34 +98,34 @@ const Services = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/Services">
+              <li className="nav-item">
+                <Link className="nav-link" to="/Services">
                   AddYourFood
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/Receipes">
+              <li className="nav-item">
+                <Link className="nav-link" to="/Receipes">
                   Receipes
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/Menu">
+              <li className="nav-item">
+                <Link className="nav-link" to="/Menu">
                   Saved
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/AboutUs">
+              <li className="nav-item">
+                <Link className="nav-link" to="/AboutUs">
                   About Us
-                </a>
+                </Link>
               </li>
             </ul>
 
@@ -138,22 +138,23 @@ const Services = () => {
       </nav>
 
       <br></br>
-      <div class="container-fluid">
-        <div class="row">
-          <div class=" col-sm-12 col-md-4 col-lg-2"></div>
-          <div class=" col-sm-12 col-md-4 col-lg-2"></div>
-          <div class=" col-sm-12 col-md-4 col-lg-3">
-            <div class="card">
+      <div className="container-fluid">
+        <div className="row">
+          <div className=" col-sm-12 col-md-4 col-lg-2"></div>
+          <div className=" col-sm-12 col-md-4 col-lg-2"></div>
+          <div className=" col-sm-12 col-md-4 col-lg-3">
+            <div className="card">
               <img
                 src="https://media.istockphoto.com/id/1165399909/photo/delicious-meal-on-a-black-plate-top-view-copy-space.jpg?s=170667a&w=0&k=20&c=IMgtTaCu6B0qipvWq9GkDnolryQmyOvfCrlJtgdU3hU="
                 width="auto"
                 height="250px"
+                alt=""
               ></img>
-              <div class="card-body">
-                <h5 class="card-title">Add Recipe</h5>
+              <div className="card-body">
+                <h5 className="card-title">Add Recipe</h5>
                 <button
                   type="button"
-                  class="btn btn-outline-secondary btn-sm"
+                  className="btn btn-outline-secondary btn-sm"
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                 >
@@ -167,54 +168,55 @@ const Services = () => {
       </div>
       <br></br>
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class=" col-sm-12 col-md-4 col-lg-2"></div>
-          <div class=" col-sm-12 col-md-4 col-lg-2"></div>
-          <div class=" col-sm-12 col-md-4 col-lg-3">
-            <div class="card">
+      <div className="container-fluid">
+        <div className="row">
+          <div className=" col-sm-12 col-md-4 col-lg-2"></div>
+          <div className=" col-sm-12 col-md-4 col-lg-2"></div>
+          <div className=" col-sm-12 col-md-4 col-lg-3">
+            <div className="card">
               <img
                 src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2018/01/Lentil-Soup_Darina-Kopcok.jpg?ssl=1"
                 width="auto"
                 height="250px"
+                alt=""
               ></img>
-              <div class="card-body">
-                <h5 class="card-title">View Recipes</h5>
-                <a href="/view" class="btn btn-outline-secondary btn-sm">
+              <div className="card-body">
+                <h5 className="card-title">View Recipes</h5>
+                <Link to="/view" className="btn btn-outline-secondary btn-sm">
                   View
-                </a>
+                </Link>
               </div>
             </div>
           </div>
-          <div class=" col-sm-12 col-md-4 col-lg-2"></div>
+          <div className=" col-sm-12 col-md-4 col-lg-2"></div>
         </div>
       </div>
 
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabel">
                 Add Recipes to the kitchen
               </h1>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <div>
                 <form onSubmit={handleSubmit}>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputEmail1" className="form-label">
                       Recipe Name
                     </label>
                     <input
@@ -228,8 +230,8 @@ const Services = () => {
                       aria-describedby="emailHelp"
                     ></input>
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">
                       Ingredients
                     </label>
                     <input
@@ -242,8 +244,8 @@ const Services = () => {
                       required
                     ></input>
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">
                       instructions
                     </label>
                     <input
@@ -256,8 +258,8 @@ const Services = () => {
                       required
                     ></input>
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">
                       Cooking time
                     </label>
                     <input
@@ -270,8 +272,8 @@ const Services = () => {
                       required
                     ></input>
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">
                       Creater Name
                     </label>
                     <input
@@ -284,8 +286,8 @@ const Services = () => {
                       required
                     ></input>
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">
                       Cusine Type
                     </label>
                     <input
@@ -298,24 +300,28 @@ const Services = () => {
                       required
                     ></input>
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">
+                  <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">
                       Image
                     </label>
                     <input
                       type="file"
-                      class="form-control"
+                      className="form-control"
                       id="recipe_image"
                       placeholder=".jpeg file"
                       onChange={handleImageChange}
                       accept=".jpeg,.jpg,.png"
                     ></input>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn" data-bs-dismiss="modal">
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn"
+                      data-bs-dismiss="modal"
+                    >
                       Close
                     </button>
-                    <button type="submit" class="btn">
+                    <button type="submit" className="btn">
                       Add Recipe
                     </button>
                   </div>
