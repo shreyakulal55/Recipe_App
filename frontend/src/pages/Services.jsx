@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -55,8 +54,8 @@ const Services = () => {
         },
         { withCredentials: true }
       );
-      const { success, message } = data;
-      if (success) {
+      const { status, message } = data;
+      if (status === 200) {
         alert("Recipe Added Successfully !!!");
       } else {
         alert(message);
