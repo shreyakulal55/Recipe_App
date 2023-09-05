@@ -85,14 +85,25 @@ const createRecipe = async (req, res) => {
 };
 
 //--------- Get Recipe ----------
-let getrecipe = async (req, res) => {
-  let data = req.query;
+// let getrecipe = async (req, res) => {
+//   let data = req.query;
 
-  let fetchRecipe = await RecipeModel.find();
-  return res
-    .status(200)
-    .send({ msg: "Recipe Details Found Sucessfully", data: fetchRecipe });
-};
+//   let fetchRecipe = await RecipeModel.find();
+//   return res
+//     .status(200)
+//     .send({ msg: "Recipe Details Found Sucessfully", data: fetchRecipe });
+// };
+let GetRecipe = async (req, res) => {
+  try {
+      const recipe = await recipes.findById(req.params.id);
+      if (!recipe ) {
+        return res.status(404).json({ message: "Recipe not found" });
+      }
+      res.status(200).json(book);
+    } catch (error) {
+      res.status(500).json({ message: "Error fetching Recipe by ID" });
+    }
+  };
 
 
 //--------- Delete Recipe ----------
@@ -110,29 +121,33 @@ let DeleteRecipe = async (req, res, next) => {
 };
 
 //--------- Update Recipe ----------
-let UpdateRecipe= async (req, res) => {
+let UpdateRecipe = async (req, res) => {
   try {
-      const recipeId = req.params.id;
-      const updatedRecipe = req.body;
-      const result = await recipes.findByIdAndUpdate(recipeId, updatedRecipe, {
-        new: true,
-      });
-      res.json(result);
-    } catch (error) {
-      res.status(500).json({ message: "Error updating Recipe", error: error.message });
+    const recipeId = req.params.id;
+    const updatedRecipe = req.body;
+    const result = await User.findByIdAndUpdate(recipeId, updatedRecipe, {
+      new: true,
+    });
+    if (!result) {
+      return res.status(404).json({ message: "Recipe not found" });
     }
-  };
-  let ViewRecipe = async (req, res, next) => {
-      try {
-        const recipe = await recipes.find();
-        res.json(recipe);
-      } catch (error) {
-        res.status(500).json({ error: 'An error occurred while fetching recipe' });
-      }
-  };
+    res.json(result);
+  } catch (error) {
+    console.error("Error updating Recipe", error);
+    res.status(500).json({ message: "Error updating Recipe", error: error.message });
+  }
+};
+let ViewRecipe = async (req, res, next) => {
+        try {
+          const recipe = await recipes.find();
+          res.json(recipe);
+        } catch (error) {
+          res.status(500).json({ error: 'An error occurred while fetching recipe' });
+        }
+    };
 
 
-module.exports = { createRecipe, getrecipe, UpdateRecipe, DeleteRecipe,ViewRecipe };
+module.exports = { createRecipe, GetRecipe, UpdateRecipe, DeleteRecipe,ViewRecipe };
 
 // --------------- Delete recipe -----------------
 

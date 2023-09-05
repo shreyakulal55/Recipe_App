@@ -97,21 +97,18 @@ return (
           <a class="nav-link" href="/Receipes">Receipes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/Menu">Menu</a>
+          <a class="nav-link" href="/Menu">Saved</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/AboutUs">About Us</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn" type="submit">Search</button>
+      
         <br></br>
         <Link to="/login">
         <button style={{ backgroundColor: "#8f8884" }}>Logout</button>
       </Link>
-      
-      </form>
+  
     </div>
   </div>
 </nav>
@@ -122,23 +119,36 @@ return (
         <div class="row">
         <div class=" col-sm-12 col-md-4 col-lg-2">
             </div>
-            <div class=" col-sm-12 col-md-4 col-lg-3">
-                <div class="card">
-                    <img src="https://ngs-space1.sgp1.digitaloceanspaces.com/am/uploads/mediaGallery/image/1657531944940.jpg-org" width="auto" height="250px"></img>                
-                    <div class="card-body">
-                        <h5 class="card-title">Add Recipe</h5>
-                        <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal"> Add</button>
-                    </div>
-                </div>
-            </div>
             <div class=" col-sm-12 col-md-4 col-lg-2">
             </div>
             <div class=" col-sm-12 col-md-4 col-lg-3">
                 <div class="card">
-                    <img src="https://plus.unsplash.com/premium_photo-1661265967105-f8afb13a8135?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG9wJTIwdmlldyUyMGZvb2R8ZW58MHx8MHx8fDA%3D&w=1000&q=80" width="auto" height="250px"></img>
+                    <img src="https://media.istockphoto.com/id/1165399909/photo/delicious-meal-on-a-black-plate-top-view-copy-space.jpg?s=170667a&w=0&k=20&c=IMgtTaCu6B0qipvWq9GkDnolryQmyOvfCrlJtgdU3hU=" width="auto" height="250px"></img>                
+                    <div class="card-body">
+                        <h5 class="card-title">Add Recipe</h5>
+                        <button type="button" class="btn btn-outline-secondary btn-sm"  data-bs-toggle="modal" data-bs-target="#exampleModal"> Add</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+<br></br>
+
+<div class="container-fluid">
+        <div class="row">
+            <div class=" col-sm-12 col-md-4 col-lg-2">
+            </div>
+            <div class=" col-sm-12 col-md-4 col-lg-2">
+            </div>
+          
+           
+
+            <div class=" col-sm-12 col-md-4 col-lg-3">
+                <div class="card">
+                    <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2018/01/Lentil-Soup_Darina-Kopcok.jpg?ssl=1" width="auto" height="250px"></img>
                     <div class="card-body">
                         <h5 class="card-title">View Recipes</h5>
-                        <a href="/view" class="btn btn-success"style={{backgroundcolor:"#FFA500"}} >View</a>
+                        <a href="/view" class="btn btn-outline-secondary btn-sm">View</a>
                     </div>
                 </div>
             </div>

@@ -78,7 +78,7 @@ const Home = () => {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/Menu">
-                  Menu
+                  Saved
                 </a>
               </li>
               <li class="nav-item">

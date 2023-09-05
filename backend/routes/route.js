@@ -13,10 +13,10 @@ router.post("/login", UserController.loginUser);
 
 // Recipe API
 router.post("/createRecipe", RecipeController.createRecipe);
-router.put("/updateRecipe",RecipeController.UpdateRecipe);
-router.delete("/deleteRecipe",RecipeController.DeleteRecipe);
-router.get("/getRecipe",RecipeController.getrecipe);
-
+router.put("/recipe/:id",RecipeController.UpdateRecipe);
+router.delete("/recipe/:id",RecipeController.DeleteRecipe);
+router.get("/recipe/:id",RecipeController.GetRecipe);
+router.get("/recipe",RecipeController.ViewRecipe);
 
 
 

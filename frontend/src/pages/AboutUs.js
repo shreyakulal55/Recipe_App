@@ -24,7 +24,7 @@ const AboutUs = () => {
               <a class="nav-link" href="/Receipes">Receipes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Menu">Menu</a>
+              <a class="nav-link" href="/Menu">Saved</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/AboutUs">About Us</a>
