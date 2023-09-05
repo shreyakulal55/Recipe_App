@@ -24,8 +24,8 @@ function Update() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setrecipe((prevBook) => ({
-      ...prevBook,
+    setrecipe((prevrecipe) => ({
+      ...prevrecipe,
       [name]: value,
     }));
   };
@@ -170,9 +170,7 @@ function Update() {
               class="formbold-btn"
               type="submit" >
                   Submit
-              </button>
-              
-              
+              </button>         
               </div>
           </form>
         </div>
