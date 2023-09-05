@@ -112,16 +112,10 @@ const Services = () => {
                   AddYourFood
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Receipes">
-                  Receipes
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Menu">
-                  Saved
-                </Link>
-              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/View">Recipes</a>
+            </li>
+              
               <li className="nav-item">
                 <Link className="nav-link" to="/AboutUs">
                   About Us

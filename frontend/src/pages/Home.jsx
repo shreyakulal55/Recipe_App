@@ -58,16 +58,9 @@ const Home = () => {
                   AddYourFood
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/Receipes">
-                  Receipes
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/Menu">
-                  Saved
-                </a>
-              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/View">Recipes</a>
+            </li>
               <li className="nav-item">
                 <a className="nav-link" href="/AboutUs">
                   About Us

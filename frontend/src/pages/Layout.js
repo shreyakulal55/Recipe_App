@@ -25,11 +25,9 @@ const Layout = () => {
           <a class="nav-link" href="/AddReceipe">AddReceipe</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/Receipes">Receipes</a>
+          <a class="nav-link" href="/Receipes">Recipes</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Menu">Saved</a>
-        </li>
+      
         <li class="nav-item">
           <a class="nav-link" href="/AboutUs">About Us</a>
         </li>

@@ -80,10 +80,7 @@ function MyRecipes() {
               <a class="nav-link" href="/Services">AddYourFood</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Receipes">Receipes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Menu">Saved</a>
+              <a class="nav-link" href="/View">Recipes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/AboutUs">About Us</a>
@@ -110,7 +107,7 @@ function MyRecipes() {
         
 
         <h3 className="text-center mt-4 mb-3" style={{ color: "#FFFFFFF", fontWeight: "bold", fontSize: "34px" }}>
-          Recipes for you
+          MakeYourFood
         </h3>
 
         <div className="row g-4">
@@ -135,15 +132,15 @@ function MyRecipes() {
                   </p>
                   <br></br>
                   <p className="card-text">
-                    <strong>Cooking Time:</strong> {recipe.cookingtime}
+                    <strong>Time_to_complete:</strong> {recipe.time_to_complete}
                   </p>
                   <br></br>
                   <p className="card-text">
-                    <strong>Nutritional Info:</strong> {recipe.diet}
+                    <strong>Cusine_type:</strong> {recipe.cusine_type}
                   </p>
                   <br></br>
                   <p className="card-text">
-                    <strong>Chef:</strong> {recipe.creator}
+                    <strong>Creator_name:</strong> {recipe.creator_name}
                   </p>
                   <br></br>
                   <div className="d-flex justify-content-center align-items-center mt-3">
