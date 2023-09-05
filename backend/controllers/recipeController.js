@@ -88,45 +88,96 @@ let getrecipe = async (req, res) => {
     .send({ msg: "Recipe Details Found Sucessfully", data: fetchRecipe });
 };
 
-// --------------- Update recipe -----------------
 
-const updateRecipe = async function (req, res) {
+//--------- Delete Recipe ----------
+let DeleteRecipe = async (req, res, next) => {
   try {
-    let recipeId = req.query.recipeId;
-    console.log(recipeId);
-    let data = req.body;
-    if (!isValidBody(data)) {
-      return res
-        .status(400)
-        .send({ status: false, message: "No data provided" });
+      const deleteRecipe = await recipes.findByIdAndDelete(req.params.id);
+      if (!deleteRecipe ) {
+        return res.status(404).json({ success: false, message: "Recipe not found" });
+      }
+      res.status(200).json({ success: true, message: "Recipe deleted successfully" });
+    } catch (error) {
+      res.status(500).json({ success: false, message: "Server error" });
     }
-
-    // if (!mongoose.isValidObjectId(recipeId)) {
-    //   return res
-    //     .status(400)
-    //     .send({ status: false, message: "Please enter the valid recipeId" });
-    // }
-
-    let findRecipeId = await RecipeModel.findById({ recipeId });
-    if (!findRecipeId) {
-      return res.status(404).send({ status: false, msg: "RecipeId Not Found" });
-    }
-
-    let updateRecipe = await RecipeModel.findOneAndUpdate(
-      { _id: recipeId },
-      { ...requestBody },
-      { new: true }
-    );
-    return res.status(200).send({
-      status: true,
-      message: "Recipe Data Updated Successfully",
-      data: updateRecipe,
-    });
-  } catch (error) {
-    res.status(500).send({ status: false, message: error.message });
-  }
+  
 };
 
+//--------- Update Recipe ----------
+let UpdateRecipe= async (req, res) => {
+  try {
+      const recipeId = req.params.id;
+      const updatedRecipe = req.body;
+      const result = await recipes.findByIdAndUpdate(recipeId, updatedRecipe, {
+        new: true,
+      });
+      res.json(result);
+    } catch (error) {
+      res.status(500).json({ message: "Error updating Recipe", error: error.message });
+    }
+  };
+  let ViewRecipe = async (req, res, next) => {
+      try {
+        const recipe = await recipes.find();
+        res.json(recipe);
+      } catch (error) {
+        res.status(500).json({ error: 'An error occurred while fetching recipe' });
+      }
+  };
+
+
+module.exports = { createRecipe, getrecipe, UpdateRecipe, DeleteRecipe,ViewRecipe };
+
+// --------------- Delete recipe -----------------
+
+// const deleteRecipe = async function (req, res) {
+//   try {
+//     let recipeId = req.params.id;
+
+//     if (!recipeId) {
+//       return res
+//         .status(400)
+//         .send({ status: false, message: "recipeId is Required" });
+//     }
+
+//     if (!isValidObjectId.test(recipeId)) {
+//       return res
+//         .status(400)
+//         .send({ status: false, message: "Please enter the valid recipeId" });
+//     }
+
+//     let findRecipeId = await recipeModel.findById({ _id: recipeId });
+//     if (!findRecipeId) {
+//       return res.status(404).send({ status: false, msg: "Book Not found" });
+//     }
+
+//     if (findRecipeId.userId != req.userId) {
+//       return res
+//         .status(403)
+//         .send({ status: false, message: "You Are Not Unauthorized" });
+//     }
+
+//     let isDeletedRecipe = findRecipeId.isDeleted;
+//     if (isDeletedRecipe == true) {
+//       return res
+//         .status(400)
+//         .send({ status: false, msg: "recipeId is already deleted" });
+//     } else {
+//       const deleteRecipe = await recipeModel.findOneAndUpdate(
+//         { _id: recipeId },
+//         { $set: { isDeleted: true, deletedAt: new Date() } },
+//         { new: true }
+//       );
+//       return res.status(200).send({
+//         status: true,
+//         message: "Book Data Deleted Successfully",
+//         data: deleteRecipe,
+//       });
+//     }
+//   } catch (error) {
+//     res.status(500).send({ status: false, message: error.message });
+//   }
+// };
 // const getRecipeById = async function (req, res) {
 //   try {
 //     let recipeId = req.params.id;
@@ -183,56 +234,41 @@ const updateRecipe = async function (req, res) {
 //     res.status(500).send({ status: false, message: error.message });
 //   }
 // };
+// --------------- Update recipe -----------------
 
-// --------------- Delete recipe -----------------
+// const updateRecipe = async function (req, res) {
+//   try {
+//     let recipeId = req.query.recipeId;
+//     console.log(recipeId);
+//     let data = req.body;
+//     if (!isValidBody(data)) {
+//       return res
+//         .status(400)
+//         .send({ status: false, message: "No data provided" });
+//     }
 
-const deleteRecipe = async function (req, res) {
-  try {
-    let recipeId = req.params.id;
+//     // if (!mongoose.isValidObjectId(recipeId)) {
+//     //   return res
+//     //     .status(400)
+//     //     .send({ status: false, message: "Please enter the valid recipeId" });
+//     // }
 
-    if (!recipeId) {
-      return res
-        .status(400)
-        .send({ status: false, message: "recipeId is Required" });
-    }
+//     let findRecipeId = await RecipeModel.findById({ recipeId });
+//     if (!findRecipeId) {
+//       return res.status(404).send({ status: false, msg: "RecipeId Not Found" });
+//     }
 
-    if (!isValidObjectId.test(recipeId)) {
-      return res
-        .status(400)
-        .send({ status: false, message: "Please enter the valid recipeId" });
-    }
-
-    let findRecipeId = await recipeModel.findById({ _id: recipeId });
-    if (!findRecipeId) {
-      return res.status(404).send({ status: false, msg: "Book Not found" });
-    }
-
-    if (findRecipeId.userId != req.userId) {
-      return res
-        .status(403)
-        .send({ status: false, message: "You Are Not Unauthorized" });
-    }
-
-    let isDeletedRecipe = findRecipeId.isDeleted;
-    if (isDeletedRecipe == true) {
-      return res
-        .status(400)
-        .send({ status: false, msg: "recipeId is already deleted" });
-    } else {
-      const deleteRecipe = await recipeModel.findOneAndUpdate(
-        { _id: recipeId },
-        { $set: { isDeleted: true, deletedAt: new Date() } },
-        { new: true }
-      );
-      return res.status(200).send({
-        status: true,
-        message: "Book Data Deleted Successfully",
-        data: deleteRecipe,
-      });
-    }
-  } catch (error) {
-    res.status(500).send({ status: false, message: error.message });
-  }
-};
-
-module.exports = { createRecipe, getrecipe, updateRecipe, deleteRecipe };
+//     let updateRecipe = await RecipeModel.findOneAndUpdate(
+//       { _id: recipeId },
+//       { ...requestBody },
+//       { new: true }
+//     );
+//     return res.status(200).send({
+//       status: true,
+//       message: "Recipe Data Updated Successfully",
+//       data: updateRecipe,
+//     });
+//   } catch (error) {
+//     res.status(500).send({ status: false, message: error.message });
+//   }
+// };

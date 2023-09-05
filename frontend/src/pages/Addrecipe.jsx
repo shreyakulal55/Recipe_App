@@ -9,7 +9,7 @@ function Addrecipe() {
     instructions: "",
     time_to_complete: "",
     cusine_type: "",
-    creator_id: "",
+    creator_name: "",
   });
   const onInputChange = (e) => {
     const name = e.target.name;
