@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");//transmitting information between a client and a server
 
 const verifyToken = async (req, res, next) => {
   try {

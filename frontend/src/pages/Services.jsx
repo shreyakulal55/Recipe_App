@@ -47,13 +47,21 @@ const Services = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post(
+      const data = await axios.post(
         "http://localhost:3001/createRecipe",
         {
           ...inputValue,
         },
         { withCredentials: true }
       );
+      // const { success, message } = data;
+      // if (success) {
+      //   alert("Recipe Added Successfully !!!")
+       
+      // } else {
+        
+      //   alert(message)
+      // }
       const { status, message } = data;
       if (status === 200) {
         alert("Recipe Added Successfully !!!");
@@ -113,9 +121,11 @@ const Services = () => {
                 </Link>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="/View">Recipes</a>
-            </li>
-              
+                <a class="nav-link" href="/View">
+                  Recipes
+                </a>
+              </li>
+
               <li className="nav-item">
                 <Link className="nav-link" to="/AboutUs">
                   About Us
@@ -225,7 +235,10 @@ const Services = () => {
                     ></input>
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="exampleInputPassword1" className="form-label">
+                    <label
+                      htmlFor="exampleInputPassword1"
+                      className="form-label"
+                    >
                       Ingredients
                     </label>
                     <input
@@ -239,8 +252,11 @@ const Services = () => {
                     ></input>
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="exampleInputPassword1" className="form-label">
-                      instructions
+                    <label
+                      htmlFor="exampleInputPassword1"
+                      className="form-label"
+                    >
+                      Instructions
                     </label>
                     <input
                       type="text"
@@ -253,8 +269,11 @@ const Services = () => {
                     ></input>
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="exampleInputPassword1" className="form-label">
-                      Cooking time
+                    <label
+                      htmlFor="exampleInputPassword1"
+                      className="form-label"
+                    >
+                      Time To complete
                     </label>
                     <input
                       type="number"
@@ -267,7 +286,10 @@ const Services = () => {
                     ></input>
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="exampleInputPassword1" className="form-label">
+                    <label
+                      htmlFor="exampleInputPassword1"
+                      className="form-label"
+                    >
                       Creater Name
                     </label>
                     <input
@@ -281,7 +303,10 @@ const Services = () => {
                     ></input>
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="exampleInputPassword1" className="form-label">
+                    <label
+                      htmlFor="exampleInputPassword1"
+                      className="form-label"
+                    >
                       Cusine Type
                     </label>
                     <input
@@ -295,7 +320,10 @@ const Services = () => {
                     ></input>
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="exampleInputPassword1" className="form-label">
+                    <label
+                      htmlFor="exampleInputPassword1"
+                      className="form-label"
+                    >
                       Image
                     </label>
                     <input

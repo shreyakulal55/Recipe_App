@@ -84,26 +84,28 @@ const createRecipe = async (req, res) => {
   }
 };
 
-//--------- Get Recipe ----------
-let GetRecipe = async (req, res) => {
-  let data = req.query;
 
-  let fetchRecipe = await RecipeModel.find();
-  return res
-    .status(200)
-    .send({ msg: "Recipe Details Found Sucessfully", data: fetchRecipe });
-};
-// GetRecipe= async (req, res) => {
-//   try {
-//       const recipe = await RecipeModel.findById(req.params.id);
-//       if (!recipe ) {
-//         return res.status(404).json({ message: "Recipe not found" });
-//       }
-//       res.status(200).json(recipe);
-//     } catch (error) {
-//       res.status(500).json({ message: "Error fetching Recipe by ID" });
-//     }
-//   };
+
+//--------- Get Recipe ----------
+// let GetRecipe = async (req, res) => {
+//   let data = req.query;
+
+//   let fetchRecipe = await RecipeModel.find();
+//   return res
+//     .status(200)
+//     .send({ msg: "Recipe Details Found Sucessfully", data: fetchRecipe });
+// };
+let GetRecipe= async (req, res) => {
+  try {
+      const recipe = await RecipeModel.findById(req.params.id);
+      if (!recipe ) {
+        return res.status(404).json({ message: "Recipe not found" });
+      }
+      res.status(200).json(recipe);
+    } catch (error) {
+      res.status(500).json({ message: "Error fetching Recipe by ID" });
+    }
+  };
 
 
 //--------- Delete Recipe ----------
@@ -125,7 +127,7 @@ let UpdateRecipe = async (req, res) => {
   try {
     const recipeId = req.params.id;
     const updatedRecipe = req.body;
-    const result = await User.findByIdAndUpdate(recipeId, updatedRecipe, {
+    const result = await RecipeModel.findByIdAndUpdate(recipeId, updatedRecipe, {
       new: true,
     });
     if (!result) {
