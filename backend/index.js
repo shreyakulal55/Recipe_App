@@ -13,6 +13,8 @@ app.use(
     origin: "*",
   })
 );
+
+
 app.use("/", route);
 
 // DB Connection

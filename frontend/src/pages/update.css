@@ -19,9 +19,9 @@
           max-width: 550px;
           width: 100%;
           border-radius: 5%;
-          background: #e48240;
-          background: -webkit-linear-gradient(39deg, #e46640 0%, #ca6e23 50%, #9c2929 100%);
-          background: linear-gradient(39deg, #e46140 0%, #ca9523 50%, #9c4a29 100%);
+          background: #b7b2af;
+          background: -webkit-linear-gradient(39deg, #886f60 0%, #886f60 50%, #886f60 100%);
+          background: linear-gradient(39deg, #886f60 0%, #8f897d 50%, #886f60 100%);
         }
       
         .formbold-input-flex {
@@ -48,7 +48,7 @@
           background: #FFFFFF;
           font-weight: 500;
           font-size: 16px;
-          color: #384d07;
+          color: #cb9188;
           outline: none;
           resize: none;
         }

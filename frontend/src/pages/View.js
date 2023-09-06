@@ -103,60 +103,52 @@ function MyRecipes() {
   </div>
 </nav>
 
-      <div className="myrecipe-container">
-        
-
-        <h3 className="text-center mt-4 mb-3" style={{ color: "#FFFFFFF", fontWeight: "bold", fontSize: "34px" }}>
-          MakeYourFood
-        </h3>
-
-        <div className="row g-4">
-          {filteredRecipes.map((recipe) => (
-            <div className="col-md-6 mb-4" key={recipe._id}>
-              <div className="card shadow-sm">
-                <img
-                  src={recipe.recipe_image}
-                  className="card-img-top"
-                  alt="Recipe pic"
-                  style={{ height: "300px", objectFit: "cover" }}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{recipe.recipe_name}</h5>
-                  <br></br>
-                  <p className="mb-2 user-input">
-                    <strong>Ingredients:</strong> {recipe.ingredients}
-                  </p>
-                  <br></br>
-                  <p className="card-text">
-                    <strong>Instructions:</strong> {recipe.instructions}
-                  </p>
-                  <br></br>
-                  <p className="card-text">
-                    <strong>Time_to_complete:</strong> {recipe.time_to_complete}
-                  </p>
-                  <br></br>
-                  <p className="card-text">
-                    <strong>Cusine_type:</strong> {recipe.cusine_type}
-                  </p>
-                  <br></br>
-                  <p className="card-text">
-                    <strong>Creator_name:</strong> {recipe.creator_name}
-                  </p>
-                  <br></br>
-                  <div className="d-flex justify-content-center align-items-center mt-3">
-                    <a href={`/update/${recipe._id}`} className="btn btn-success me-2">
-                      Update
-                    </a>
-                    <button className="btn btn-danger" onClick={() => handleDelete(recipe._id)}>
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              </div>
+<div className="myrecipe-container">
+  <h3 className="text-center mt-4 mb-3" style={{ color: "#FFFFFFF", fontWeight: "bold", fontSize: "34px" }}>
+    MakeYourFood
+  </h3>
+  <div className="row">
+    {filteredRecipes.map((recipe) => (
+      <div className="col-md-4 mb-4" key={recipe._id}>
+        <div className="card shadow-sm" style={{ maxWidth: "18rem" }}>
+          <img
+            src={recipe.recipe_image}
+            className="card-img-top"
+            alt="Recipe pic"
+            style={{ height: "200px", objectFit: "cover" }}
+          />
+          <div className="card-body">
+            <h5 className="card-title">{recipe.recipe_name}</h5>
+            <p className="mb-2 user-input">
+              <strong>Ingredients:</strong> {recipe.ingredients}
+            </p>
+            <p className="card-text">
+              <strong>Instructions:</strong> {recipe.instructions}
+            </p>
+            <p className="card-text">
+              <strong>Time_to_complete:</strong> {recipe.time_to_complete}
+            </p>
+            <p className="card-text">
+              <strong>Cusine_type:</strong> {recipe.cusine_type}
+            </p>
+            <p className="card-text">
+              <strong>Creator_name:</strong> {recipe.creator_name}
+            </p>
+            <div className="d-flex justify-content-center align-items-center mt-3">
+              <a href={`/update/${recipe._id}`} className="btn btn-success me-2">
+                Update
+              </a>
+              <button className="btn btn-danger" onClick={() => handleDelete(recipe._id)}>
+                Delete
+              </button>
             </div>
-          ))}
+          </div>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
     </>
   );
 }
