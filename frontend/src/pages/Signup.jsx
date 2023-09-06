@@ -73,7 +73,7 @@ const Signup = () => {
               type="email"
               name="email"
               value={email}
-              placeholder="Enter your email"
+              placeholder="Enter Your Email"
               onChange={handleOnChange}
             />
           </div>
@@ -83,7 +83,7 @@ const Signup = () => {
               type="text"
               name="username"
               value={username}
-              placeholder="Enter your username"
+              placeholder="Enter your Username"
               onChange={handleOnChange}
             />
           </div>
@@ -93,7 +93,7 @@ const Signup = () => {
               type="password"
               name="password"
               value={password}
-              placeholder="Enter your password"
+              placeholder="Enter your Password"
               onChange={handleOnChange}
             />
           </div>
