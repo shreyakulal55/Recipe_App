@@ -46,7 +46,7 @@ function Update() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await Axios.put(`http://localhost:4000/recipe/${id}`, recipe);
+      const response = await Axios.put(`http://localhost:3001/recipe/${id}`, recipe);
       console.log("Recipe updated:", response.data);
       if (response.status === 200) {
         toast.success("Recipe updated successfully", {
@@ -70,29 +70,29 @@ function Update() {
   return (
 <>
 <center>
-<div class="formbold-main-wrapper">
-        <div class="formbold-form-wrapper">
+<div className="formbold-main-wrapper">
+        <div className="formbold-form-wrapper">
         
           <form   onSubmit={handleUpdate} >
-            <h1 class="heading">Update</h1>
-            <br class="break"></br>
+            <h1 className="heading">Update</h1>
+            <br className="break"></br>
             <img src={recipe.recipe_image} className="card-img-top" alt="Card" />
             <br></br>
             <hr></hr>
-            <div class="formbold-input-flex">
-                    <label class="formbold-form-label">
+            <div className="formbold-input-flex">
+                    <label className="formbold-form-label">
                     image
                     </label>
                     <input
                       type="file"
-                      class="formbold-form-input"
+                      className="formbold-form-input"
                       id="recipe_image"
                       placeholder='.jpeg file'
                       onChange={handleImageChange}
                       accept="image/*"
                     ></input>
                   </div>
-              <div class="formbold-input-flex">
+              <div className="formbold-input-flex">
                 <div>
                     <input
                      type="text"
@@ -101,13 +101,13 @@ function Update() {
                      onChange={handleInputChange}
                     
                   
-                    class="formbold-form-input"
+                     className="formbold-form-input"
                      />
-                    <label  class="formbold-form-label">Recipe Name</label>
+                    <label  className="formbold-form-label">Recipe Name</label>
                 </div>
                 <div>
                     <input
-                    class="formbold-form-input"
+                    className="formbold-form-input"
                     type="text"
                     name="ingredients"
                     value={recipe.ingredients}
@@ -115,13 +115,13 @@ function Update() {
                     
                    
                     />
-                    <label  class="formbold-form-label">Ingredients</label>
+                    <label  className="formbold-form-label">Ingredients</label>
                 </div>
               </div>
-              <div class="formbold-input-flex">
+              <div className="formbold-input-flex">
                 <div>
                     <input
-                    class="formbold-form-input"
+                    className="formbold-form-input"
                     type="text"
                     name="instructions"
                     value={recipe.instructions}
@@ -129,45 +129,45 @@ function Update() {
                     
                     
                     />
-                    <label class="formbold-form-label"> Instructions </label>
+                    <label className="formbold-form-label"> Instructions </label>
                 </div>
                 <div>
                     <input
-                    class="formbold-form-input"
+                    className="formbold-form-input"
                     type="text" 
                     name="time_to_complete"
                     value={recipe.time_to_complete}
                     onChange={handleInputChange}
                    />
-                    <label class="formbold-form-label"> time_to_complete</label>
+                    <label className="formbold-form-label"> time_to_complete</label>
                 </div>
               </div>
-              <div class="formbold-input-flex">
+              <div className="formbold-input-flex">
                 <div>
                     <input
-                    class="formbold-form-input"
+                    className="formbold-form-input"
                     type="text"
                     name="diet"
                     value={recipe.creator_name}
                     onChange={handleInputChange}
                     />
-                    <label class="formbold-form-label">creator_name</label>
+                    <label className="formbold-form-label">creator_name</label>
                 </div>
                 <div>
                     <input
-                    class="formbold-form-input"
+                    className="formbold-form-input"
                     type="text" 
                     name="creator"
                     value={recipe.cusine_type}
                     onChange={handleInputChange}
                    />
-                    <label class="formbold-form-label">cusine_type</label>
+                    <label className="formbold-form-label">cusine_type</label>
                 </div>
               </div>
-              <div class="formbold-bottom">
-              <button   class="formbold-btn" type="button" ><a class="formbold-anchor "  href="/view">Cancel</a></button>
+              <div className="formbold-bottom">
+              <button   className="formbold-btn" type="button" ><a className="formbold-anchor "  href="/view">Cancel</a></button>
               <button 
-              class="formbold-btn"
+              className="formbold-btn"
               type="submit" >
                   Submit
               </button>         
